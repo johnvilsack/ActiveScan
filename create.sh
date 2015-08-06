@@ -37,6 +37,7 @@ wget -r -O www/js/index.js https://gist.githubusercontent.com/johnvilsack/44cb8f
 cordova platforms add ios;
 cordova build ios;
 cd ../;
+cp default.plist src/platforms/ios/$CORDOVA_NAME/$CORDOVA_NAME-Info.plist;
 
 # Create shortcut to XCode
 ln -s src/platforms/ios/$CORDOVA_NAME.xcodeproj;

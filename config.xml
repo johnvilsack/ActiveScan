@@ -18,6 +18,9 @@
     <allow-intent href="geo:*" />
     <icon src="icon.png" />
     <platform name="ios">
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarStyle" value="blackopaque" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="orientation" value="portrait" />
@@ -31,6 +34,7 @@
         <preference name="show-splash-screen-spinner" value="true" />
         <preference name="auto-hide-splash-screen" value="false" />
         <preference name="disable-cursor" value="false" />
+        <preference name="BackupWebStorage" value="local"/>
         <splash height="480" src="splash.png" width="320" />
         <splash height="960" src="splash.png" width="640" />
         <splash height="1024" src="splash.png" width="768" />
