@@ -2,9 +2,9 @@
 <widget id="com.activesportsinc.activescan" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ActiveScan</name>
     <description>
-        ActiveScan is a WebView tool with integrated Linea Drivers
+        ActiveScan is a WebView tool with integrated Linea drivers
     </description>
-    <author email="vilsack@gmail.com" href="http://www.johnvilsack.com">
+    <author email="vilsack@gmail.com" href="www.johnvilsack.com">
         John Vilsack
     </author>
     <content src="index.html" />
