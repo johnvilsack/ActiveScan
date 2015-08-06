@@ -1,9 +1,13 @@
 #! /bin/bash
-while true; do
-    read -p "This will delete the src folder completely. Are you sure?" yn
-    case $yn in
-        [Yy]* ) rm -rf src/; rm *.xcodeproj; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+source includes.sh
+
+$CORDOVA_NAME.xcodeproj
+
+read -r -p "Are you sure? [y/N] " response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    rm -rf src/;
+    rm $CORDOVA_NAME.xcodeproj;
+else
+    echo 'Cancelled.';
+fi
