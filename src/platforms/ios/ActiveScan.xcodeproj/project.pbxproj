@@ -39,12 +39,12 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		A4A75D39DB014E579F46F7D7 /* LineaProCDV.m in Sources */ = {isa = PBXBuildFile; fileRef = E862BC2E405A4C98A2C77508 /* LineaProCDV.m */; };
-		748DAFC5CAA74452A879BEAC /* libdtdev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B0377030864E9A820831C2 /* libdtdev.a */; };
-		694F215C0D834CF89AA7E264 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E525A44628424CCB842BBC3E /* Settings.bundle */; };
-		C9B3EB9F546540E683C39AD4 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B72633C4474598C295D6 /* ExternalAccessory.framework */; };
-		EC7A1725155749D6ACF64A9F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435A4DE7ED0D4D14A4C89E95 /* AudioToolbox.framework */; };
-		53F7DF5A95244ECDB5AF93C6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FD6FDB7C7C4133BCA1D71A /* MediaPlayer.framework */; };
+		324A240C5C51401E95088B62 /* LineaProCDV.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E94E622F74C6489518CF7 /* LineaProCDV.m */; };
+		2A4FFC8FE2FD4B409EF0BC44 /* libdtdev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB26AA233844788B62D36C4 /* libdtdev.a */; };
+		4496D12DED3341949EAB44E9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73267B8A65964080A074BAED /* Settings.bundle */; };
+		681393FD3C1C42E08CE1C457 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1990483B37445CAA9231CD /* ExternalAccessory.framework */; };
+		9D450D3563F646DBA31983D2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82078D97B2914A36A3D0174A /* AudioToolbox.framework */; };
+		BBAE30968BFB419A8D82FA58 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43C2CAAB17F49C38B207E9E /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,14 +110,14 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "ActiveScan/config.xml"; sourceTree = "<group>"; };
-		E862BC2E405A4C98A2C77508 /* LineaProCDV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LineaProCDV.m"; path = "com.activescan.lineaprocdv/LineaProCDV.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		A2B0377030864E9A820831C2 /* libdtdev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libdtdev.a"; path = "ActiveScan/Plugins/com.activescan.lineaprocdv/libdtdev.a"; sourceTree = "<group>"; fileEncoding = 4; };
-		880F5C74B74740449132A002 /* LineaProCDV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LineaProCDV.h"; path = "com.activescan.lineaprocdv/LineaProCDV.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		007373599341473B98958B33 /* DTDevices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DTDevices.h"; path = "com.activescan.lineaprocdv/DTDevices.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		E525A44628424CCB842BBC3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "Settings.bundle"; path = "Settings.bundle"; sourceTree = "<group>"; };
-		8628B72633C4474598C295D6 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ExternalAccessory.framework"; path = "System/Library/Frameworks/ExternalAccessory.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		435A4DE7ED0D4D14A4C89E95 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		C9FD6FDB7C7C4133BCA1D71A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MediaPlayer.framework"; path = "System/Library/Frameworks/MediaPlayer.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		677E94E622F74C6489518CF7 /* LineaProCDV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LineaProCDV.m"; path = "com.activescan.lineaprocdv/LineaProCDV.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0AB26AA233844788B62D36C4 /* libdtdev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libdtdev.a"; path = "ActiveScan/Plugins/com.activescan.lineaprocdv/libdtdev.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		6AA7F846BA41449E9F3637D2 /* LineaProCDV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LineaProCDV.h"; path = "com.activescan.lineaprocdv/LineaProCDV.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C7F50AFFDDB74504AEEE8A98 /* DTDevices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DTDevices.h"; path = "com.activescan.lineaprocdv/DTDevices.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		73267B8A65964080A074BAED /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "Settings.bundle"; path = "Settings.bundle"; sourceTree = "<group>"; };
+		CC1990483B37445CAA9231CD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ExternalAccessory.framework"; path = "System/Library/Frameworks/ExternalAccessory.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		82078D97B2914A36A3D0174A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		F43C2CAAB17F49C38B207E9E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MediaPlayer.framework"; path = "System/Library/Frameworks/MediaPlayer.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +129,10 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
-				748DAFC5CAA74452A879BEAC /* libdtdev.a in Frameworks */,
-				C9B3EB9F546540E683C39AD4 /* ExternalAccessory.framework in Frameworks */,
-				EC7A1725155749D6ACF64A9F /* AudioToolbox.framework in Frameworks */,
-				53F7DF5A95244ECDB5AF93C6 /* MediaPlayer.framework in Frameworks */,
+				2A4FFC8FE2FD4B409EF0BC44 /* libdtdev.a in Frameworks */,
+				681393FD3C1C42E08CE1C457 /* ExternalAccessory.framework in Frameworks */,
+				9D450D3563F646DBA31983D2 /* AudioToolbox.framework in Frameworks */,
+				BBAE30968BFB419A8D82FA58 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +194,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* ActiveScan-Info.plist */,
-				E525A44628424CCB842BBC3E /* Settings.bundle */,
+				73267B8A65964080A074BAED /* Settings.bundle */,
 			);
 			name = Resources;
 			path = "ActiveScan/Resources";
@@ -206,10 +206,10 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
-				A2B0377030864E9A820831C2 /* libdtdev.a */,
-				8628B72633C4474598C295D6 /* ExternalAccessory.framework */,
-				435A4DE7ED0D4D14A4C89E95 /* AudioToolbox.framework */,
-				C9FD6FDB7C7C4133BCA1D71A /* MediaPlayer.framework */,
+				0AB26AA233844788B62D36C4 /* libdtdev.a */,
+				CC1990483B37445CAA9231CD /* ExternalAccessory.framework */,
+				82078D97B2914A36A3D0174A /* AudioToolbox.framework */,
+				F43C2CAAB17F49C38B207E9E /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				E862BC2E405A4C98A2C77508 /* LineaProCDV.m */,
-				880F5C74B74740449132A002 /* LineaProCDV.h */,
-				007373599341473B98958B33 /* DTDevices.h */,
+				677E94E622F74C6489518CF7 /* LineaProCDV.m */,
+				6AA7F846BA41449E9F3637D2 /* LineaProCDV.h */,
+				C7F50AFFDDB74504AEEE8A98 /* DTDevices.h */,
 			);
 			name = Plugins;
 			path = "ActiveScan/Plugins";
@@ -381,7 +381,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
-				694F215C0D834CF89AA7E264 /* Settings.bundle in Resources */,
+				4496D12DED3341949EAB44E9 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +413,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				A4A75D39DB014E579F46F7D7 /* LineaProCDV.m in Sources */,
+				324A240C5C51401E95088B62 /* LineaProCDV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

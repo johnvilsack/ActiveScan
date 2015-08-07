@@ -72,19 +72,21 @@
     NSString *settingsPath = [bPath stringByAppendingPathComponent:@"Settings.bundle"];
     NSString *plistFile = [settingsPath stringByAppendingPathComponent:@"Root.plist"];   
 
-    //preferences
+    // Dictionary and Primary Array
     NSDictionary *settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:plistFile];
     NSArray *preferencesArray = [settingsDictionary objectForKey:@"PreferenceSpecifiers"];
 
-    //loop thru prefs
-    NSDictionary *item;
+    //Preferences Array
+    NSDictionary *pref;
 
-    for(item in preferencesArray)
+    // BOOL latestNews = ![[NSUserDefaults standardUserDefaults] boolForKey:@"notLatestNews"];
+
+    for(pref in preferencesArray)
     {
         //get the key
-        NSString *keyValue = [item objectForKey:@"Key"];
+        NSString *keyValue = [pref objectForKey:@"Key"];
         //get the default
-        id defaultValue = [item objectForKey:@"DefaultValue"];
+        id defaultValue = [pref objectForKey:@"DefaultValue"];
 
         NSLog(@"%@, %@", defaultValue, keyValue);
         
@@ -93,10 +95,19 @@
         [standardUserDefaults setObject:defaultValue forKey:keyValue];
     }
 
-    NSLog(@"PassThroughSync: %@", [standardUserDefaults objectForKey:@"PassThroughSync"]);
+    
+
+    int retPassThroughSync = [[standardUserDefaults objectForKey:@"PassThroughSync"] intValue];
+
+    NSLog(@"%i", retPassThroughSync);
+
 
     // keep the in-memory cache in sync with the database
-    [standardUserDefaults synchronize];
+   [standardUserDefaults synchronize];
+
+    //FIGURE OUT HOW TO GET RESULTS BACK TO HTML.
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:retPassThroughSync];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)getConnectionStatus:(CDVInvokedUrlCommand*)command
