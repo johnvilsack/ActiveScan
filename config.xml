@@ -16,6 +16,9 @@
 	<allow-intent href="sms:*" />
 	<allow-intent href="mailto:*" />
 	<allow-intent href="geo:*" />
+	<preference name="Orientation" value="portrait" />
+	<preference name="Fullscreen" value="true" />
+	<preference name="WebViewBounce" value="false" />
 	<icon src="icon.png" />
 	<platform name="ios">
 		<allow-intent href="itms:*" />
@@ -23,10 +26,7 @@
 		<preference name="StatusBarOverlaysWebView" value="false" />
 		<preference name="StatusBarBackgroundColor" value="#000000" />
 		<preference name="StatusBarStyle" value="blackopaque" />
-		<preference name="orientation" value="portrait" />
 		<preference name="target-device" value="handset" />
-		<preference name="fullscreen" value="true" />
-		<preference name="webviewbounce" value="false" />
 		<preference name="prerendered-icon" value="true" />
 		<preference name="stay-in-webview" value="true" />
 		<preference name="ios-statusbarstyle" value="default" />

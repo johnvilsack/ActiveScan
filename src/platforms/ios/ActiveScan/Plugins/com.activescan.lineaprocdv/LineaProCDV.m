@@ -39,14 +39,6 @@
     }
 }
 
--(void) scanPaymentCard:(NSString*)num {
-
-    NSString *jsStatement = [NSString stringWithFormat:@"onSuccessScanPaymentCard('%@');", num];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsStatement];
-	[self.viewController dismissViewControllerAnimated:YES completion:nil];
-
-}
-
 - (void)initDT:(CDVInvokedUrlCommand*)command
 {
     // runInBackground Fix
@@ -63,6 +55,7 @@
     }];
 }
 
+// Preferences settings fro Lineas
 - (void) readFromSettingsFile:(CDVInvokedUrlCommand*)command
 {
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -95,12 +88,9 @@
         [standardUserDefaults setObject:defaultValue forKey:keyValue];
     }
 
-    
-
     int retPassThroughSync = [[standardUserDefaults objectForKey:@"PassThroughSync"] intValue];
 
     NSLog(@"%i", retPassThroughSync);
-
 
     // keep the in-memory cache in sync with the database
    [standardUserDefaults synchronize];
@@ -120,30 +110,6 @@
 {
     [dtdev barcodeStartScan:nil];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:[dtdev connstate]];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
-- (void)setPassThroughSync:(CDVInvokedUrlCommand *)command
-{
-    NSError *error=nil;
-
-    BOOL dtResult = [dtdev setPassThroughSync:true error:&error];
-    NSLog(@"setPassThroughSync: %d", dtResult);
-
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:1];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
-- (void)unsetPassThroughSync:(CDVInvokedUrlCommand *)command
-{
-    NSError *error=nil;
-
-    if (![dtdev setPassThroughSync:false error:&error])
-        NSLog(@"unsetPassThroughSync: %i %@", 0, error.description);
-    else
-        NSLog(@"unsetPassThroughSync: %i", 1);
-
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:0];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -190,6 +156,30 @@
     NSLog(@"barcodeNSData: barcode - %@, type - %@", [[NSString alloc] initWithData:barcode encoding:NSUTF8StringEncoding], isotype);
     NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onBarcodeData('%@', '%@');", [[NSString alloc] initWithData:barcode encoding:NSUTF8StringEncoding], isotype];
     [[super webView] stringByEvaluatingJavaScriptFromString:retStr];
+}
+
+- (void)setPassThroughSync:(CDVInvokedUrlCommand *)command
+{
+    NSError *error=nil;
+
+    BOOL dtResult = [dtdev setPassThroughSync:true error:&error];
+    NSLog(@"setPassThroughSync: %d", dtResult);
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:1];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)unsetPassThroughSync:(CDVInvokedUrlCommand *)command
+{
+    NSError *error=nil;
+
+    if (![dtdev setPassThroughSync:false error:&error])
+        NSLog(@"unsetPassThroughSync: %i %@", 0, error.description);
+    else
+        NSLog(@"unsetPassThroughSync: %i", 1);
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:0];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 + (NSString*) getPDF417ValueByCode: (NSArray*) codesArr code:(NSString*)code {
@@ -251,7 +241,5 @@
     NSString* retStr = [ NSString stringWithFormat:@"var rawCodesArr = %@; LineaProCDV.onBarcodeData(rawCodesArr, '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@');", rawCodesArrJSString, license, dateBirth, state, city, expires, gender, height, weight, hair, eye, name, lastName];
     [[super webView] stringByEvaluatingJavaScriptFromString:retStr];
 }
-
-
 
 @end
