@@ -30,6 +30,9 @@ cordova plugins add https://github.com/johnvilsack/ActiveScan-Cordova-Plugin-Lin
 # Get the proper index.js to activate it
 wget -r -O www/js/index.js https://gist.githubusercontent.com/johnvilsack/9efc3d593deb1b77fa0d/raw/18ef0712f1c4f4281ecca54d5140319bcea364b1/index.js;
 
+# Add class for javascript console here.
+(cd www; sed -i.sed 's|<div class="app">|<div id="app" class="app">|g' index.html; rm index.html.sed;)
+
 # Build for IOS
 cordova platforms add ios;
 cordova build ios;
