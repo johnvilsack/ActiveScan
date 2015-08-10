@@ -1,0 +1,61 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "ExternalAccessory.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MediaPlayer.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"LineaProCDV\"><param name=\"ios-package\" value=\"LineaProCDV\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "UISupportedExternalAccessoryProtocols": [
+                        {
+                            "xml": "<array><string>com.datecs.linea.pro.msr</string><string>com.datecs.iserial.communication</string><string>com.datecs.pinpad</string><string>com.datecs.linea.pro.bar</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.activescan.lineaprocdv": {
+            "PACKAGE_NAME": "com.activescan.activescanapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.activescan.activescanapp"
+        }
+    },
+    "dependent_plugins": {}
+}
