@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ## Find the vars in 
-source includes.sh
+source files/script_config.ini
 
 # Create Project 
 cordova create $CORDOVA_NAME $CORDOVA_ID;
@@ -10,9 +10,9 @@ cordova create $CORDOVA_NAME $CORDOVA_ID;
 mv $CORDOVA_NAME src;
 
 # Move customizable files
-yes | cp -f config.xml src/
-yes | cp -f splash.png src/
-yes | cp -f icon.png src/
+yes | cp -f files/config.xml src/
+yes | cp -f files/splash.png src/
+yes | cp -f files/icon.png src/
 
 cd src;
 
@@ -32,10 +32,11 @@ if [ "$USE_WKWEBVIEW" == "Y" ]; then
 		cordova plugin add com.telerik.plugins.wkwebview;
 fi
 
-# Get the proper index.js to activate it
-wget -r -O www/js/index.js https://gist.githubusercontent.com/johnvilsack/9efc3d593deb1b77fa0d/raw/2a2d9b20a30f278d7579cad1d8c017c35c0fec80/index.js;
+# Get index files for local server
+yes | cp -f ../files/index.html www/index.html
+yes | cp -f ../files/index.js www/js/index.js
 
-# Add class for javascript console here.
+# Add class for javascript console here. - DEBUG ONLY
 (cd www; sed -i.sed 's|<div class="app">|<div id="app" class="app">|g' index.html; rm index.html.sed;)
 
 # Build for IOS
@@ -43,7 +44,7 @@ cordova platforms add ios;
 cordova prepare;
 cordova build ios;
 cd ../;
-cp default.plist src/platforms/ios/$CORDOVA_NAME/$CORDOVA_NAME-Info.plist;
+cp files/default.plist src/platforms/ios/$CORDOVA_NAME/$CORDOVA_NAME-Info.plist;
 
 # Create shortcut to XCode
 ln -s src/platforms/ios/$CORDOVA_NAME.xcodeproj;

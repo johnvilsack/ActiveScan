@@ -1,5 +1,5 @@
 #! /bin/bash
-source includes.sh
+source files/script_config.ini
 
 read -r -p "Are you sure? [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]

@@ -1,5 +1,5 @@
 #! /bin/bash
-source includes.sh
+source files/script_config.ini
 
 cd src;
 cordova platforms remove ios;
