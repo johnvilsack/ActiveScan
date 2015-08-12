@@ -7,7 +7,7 @@
 	<author email="AUTHOR_EMAIL" href="AUTHOR_WEBSITE">
 		AUTHOR_NAME
 	</author>
-	<content src="index.html" />
+	<content src="CONTENT_INDEX" />
 	<plugin name="cordova-plugin-whitelist" version="1" />
 	<access origin="*" />
 	<allow-intent href="http://*/*" />

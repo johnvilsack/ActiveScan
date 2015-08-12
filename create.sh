@@ -17,18 +17,22 @@ yes | cp -f icon.png src/
 cd src;
 
 # Alter config.xml settings
-sed -i.sed "s/CORDOVA_NAME/$CORDOVA_NAME/g" config.xml
-sed -i.sed "s/CORDOVA_ID/$CORDOVA_ID/g" config.xml
-sed -i.sed "s/AUTHOR_NAME/$AUTHOR_NAME/g" config.xml
-sed -i.sed "s/AUTHOR_EMAIL/$AUTHOR_EMAIL/g" config.xml
-sed -i.sed "s/AUTHOR_WEBSITE/$AUTHOR_WEBSITE/g" config.xml
+sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" config.xml
+sed -i.sed "s|CORDOVA_ID|$CORDOVA_ID|g" config.xml
+sed -i.sed "s|AUTHOR_NAME|$AUTHOR_NAME|g" config.xml
+sed -i.sed "s|AUTHOR_EMAIL|$AUTHOR_EMAIL|g" config.xml
+sed -i.sed "s|AUTHOR_WEBSITE|$AUTHOR_WEBSITE|g" config.xml
+sed -i.sed "s|CONTENT_INDEX|$CONTENT_INDEX|g" config.xml
 rm config.xml.sed
 
 # Get the Linea Plugin
 cordova plugins add https://github.com/johnvilsack/ActiveScan-Cordova-Plugin-Linea-Pro.git;
 
-# Get the proper index.js to activate it
+if [ "$USE_WKWEBVIEW" == "Y" ]; then
+		cordova plugin add com.telerik.plugins.wkwebview;
+fi
 
+# Get the proper index.js to activate it
 wget -r -O www/js/index.js https://gist.githubusercontent.com/johnvilsack/9efc3d593deb1b77fa0d/raw/2a2d9b20a30f278d7579cad1d8c017c35c0fec80/index.js;
 
 # Add class for javascript console here.
@@ -36,6 +40,7 @@ wget -r -O www/js/index.js https://gist.githubusercontent.com/johnvilsack/9efc3d
 
 # Build for IOS
 cordova platforms add ios;
+cordova prepare;
 cordova build ios;
 cd ../;
 cp default.plist src/platforms/ios/$CORDOVA_NAME/$CORDOVA_NAME-Info.plist;
