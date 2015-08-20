@@ -10,32 +10,36 @@ cordova create $CORDOVA_NAME $CORDOVA_ID;
 mv $CORDOVA_NAME src;
 
 # Move customizable files
-yes | cp -f files/config.xml src/
-yes | cp -f files/splash.png src/
-yes | cp -f files/icon.png src/
+yes | cp -f files/config.xml src/;
+yes | cp -f files/splash.png src/;
+yes | cp -f files/icon.png src/;
+yes | cp -f files/icon.png src/www/img/;
 
 cd src;
 
 # Alter config.xml settings
-sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" config.xml
-sed -i.sed "s|CORDOVA_ID|$CORDOVA_ID|g" config.xml
-sed -i.sed "s|AUTHOR_NAME|$AUTHOR_NAME|g" config.xml
-sed -i.sed "s|AUTHOR_EMAIL|$AUTHOR_EMAIL|g" config.xml
-sed -i.sed "s|AUTHOR_WEBSITE|$AUTHOR_WEBSITE|g" config.xml
-sed -i.sed "s|CONTENT_INDEX|$CONTENT_INDEX|g" config.xml
-rm config.xml.sed
+sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" config.xml;
+sed -i.sed "s|CORDOVA_ID|$CORDOVA_ID|g" config.xml;
+sed -i.sed "s|AUTHOR_NAME|$AUTHOR_NAME|g" config.xml;
+sed -i.sed "s|AUTHOR_EMAIL|$AUTHOR_EMAIL|g" config.xml;
+sed -i.sed "s|AUTHOR_WEBSITE|$AUTHOR_WEBSITE|g" config.xml;
+sed -i.sed "s|CONTENT_INDEX|$CONTENT_INDEX|g" config.xml;
+rm config.xml.sed;
 
 # Get the Linea Plugin
 cordova plugins add https://github.com/johnvilsack/ActiveScan-Cordova-Plugin-Linea-Pro.git;
 
 if [ "$USE_WKWEBVIEW" == "Y" ]; then
-	cordova plugins add https://github.com/johnvilsack/WKWebView # My working fork
+	cordova plugins add https://github.com/johnvilsack/WKWebView; # My working fork
 	# cordova plugin add com.telerik.plugins.wkwebview; #Original
 fi
 
 # Get index files for local server
-yes | cp -f ../files/index.html www/index.html
-yes | cp -f ../files/index.js www/js/index.js
+yes | cp -f ../files/index.html www/index.html;
+yes | cp -f ../files/index.js www/js/index.js;
+yes | cp -f ../files/index.js www/js/demo.js;
+sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" www/index.html;
+rm www/index.html.sed;
 
 # Add class for javascript console here. - DEBUG ONLY
 if [ "$DEBUGGING" == "Y" ]; then

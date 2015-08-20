@@ -1,5 +1,6 @@
 function onConnectivityChange(state) {
 	console.log("Connection is: " + state);
+	ConnectivityButton(state);
 }
 
 function onBarcodeScanned(data) {
@@ -37,18 +38,12 @@ var app = {
 			}
 		})();
 ///////////////////////////////////////////////////////////////////////////
+
 		LineaProCDV.initDT();
 		app.receivedEvent('deviceready');
-
 	},
+
 		receivedEvent: function(id) {
-		var parentElement = document.getElementById(id);
-		var listeningElement = parentElement.querySelector('.listening');
-		var receivedElement = parentElement.querySelector('.received');
-
-		listeningElement.setAttribute('style', 'display:none;');
-		receivedElement.setAttribute('style', 'display:block;');
-
 		console.log('Received Event: ' + id);
 	}
 };
