@@ -13,7 +13,6 @@ mv $CORDOVA_NAME src;
 yes | cp -f files/config.xml src/;
 yes | cp -f files/splash.png src/;
 yes | cp -f files/icon.png src/;
-yes | cp -f files/icon.png src/www/img/;
 
 cd src;
 
@@ -37,7 +36,6 @@ fi
 # Get index files for local server
 yes | cp -f ../files/index.html www/index.html;
 yes | cp -f ../files/index.js www/js/index.js;
-yes | cp -f ../files/index.js www/js/demo.js;
 sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" www/index.html;
 rm www/index.html.sed;
 

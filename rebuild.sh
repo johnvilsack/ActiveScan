@@ -11,10 +11,8 @@ yes | cp -f files/default.plist src/platforms/ios/$CORDOVA_NAME/$CORDOVA_NAME-In
 yes | cp -f files/splash.png src/;
 yes | cp -f files/icon.png src/;
 
-yes | cp -f files/icon.png src/www/img/;
 yes | cp -f files/index.html src/www/index.html;
 yes | cp -f files/index.js src/www/js/index.js;
-yes | cp -f files/demo.js src/www/js/demo.js;
 sed -i.sed "s|CORDOVA_NAME|$CORDOVA_NAME|g" src/www/index.html;
 rm src/www/index.html.sed;
 
