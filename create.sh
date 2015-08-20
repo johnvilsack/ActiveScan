@@ -38,7 +38,10 @@ yes | cp -f ../files/index.html www/index.html
 yes | cp -f ../files/index.js www/js/index.js
 
 # Add class for javascript console here. - DEBUG ONLY
-(cd www; sed -i.sed 's|<div class="app">|<div id="app" class="app">|g' index.html; rm index.html.sed;)
+if [ "$DEBUGGING" == "Y" ]; then
+	(cd www; sed -i.sed 's|<div class="app">|<div id="app" class="app">|g' index.html; rm index.html.sed;);
+fi
+
 
 # Build for IOS
 cordova platforms add ios;
