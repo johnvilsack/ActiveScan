@@ -29,7 +29,8 @@ rm config.xml.sed
 cordova plugins add https://github.com/johnvilsack/ActiveScan-Cordova-Plugin-Linea-Pro.git;
 
 if [ "$USE_WKWEBVIEW" == "Y" ]; then
-		cordova plugin add com.telerik.plugins.wkwebview;
+	cordova plugins add https://github.com/johnvilsack/WKWebView # My working fork
+	# cordova plugin add com.telerik.plugins.wkwebview; #Original
 fi
 
 # Get index files for local server
